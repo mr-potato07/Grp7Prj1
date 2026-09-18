@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 3720
+  controlID: 4689
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 112}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 3721
+  controlID: 4690
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 56}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 3722
+  controlID: 4691
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -681,15 +681,15 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 1
       containerId: overlay-container--right
-      displayed: 1
+      displayed: 0
       id: Scene View/Tilemap Focus
       index: 0
-      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":-143.0,"y":-48.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: -143, y: -48}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 3
       layout: 4
       size: {x: 0, y: 0}
       sizeOverridden: 0
@@ -850,9 +850,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 31.527111, y: -1.7791768, z: -0.14505513}
+    m_Target: {x: 3.299219, y: 1.3491032, z: 0.020417474}
     speed: 2
-    m_Value: {x: 30.650843, y: -1.9853575, z: -0.13124101}
+    m_Value: {x: 2.9647934, y: 1.1893777, z: 0.027105978}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -903,9 +903,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 32.079422
+    m_Target: 15.532195
     speed: 2
-    m_Value: 30.698011
+    m_Value: 14.863344
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1071,7 +1071,7 @@ MonoBehaviour:
     m_DynamicPanelBehaviorModified: 0
   m_ViewState:
     ValidContent: 10
-    ViewModelState: 7adaee72040000001c000000bc0100000200000009000000ffffffff2212f54802000000180000000100000076fa4866010000002c000000080000006aac19bf9eb8554f875e547de529cec727780000000700000100000002000000515f40510000000000000000000000006aac19bf9eb8554f875e547de529cec7df6d00000011000000000000020000006eba9e280000000000000000000000006aac19bf9eb8554f875e547de529cec7eb6d000000110000000000000200000040419d710000000000000000000000006aac19bf9eb8554f875e547de529cec7ba6d0000001100000000000002000000812f14400000000000000000000000006aac19bf9eb8554f875e547de529cec7e66d0000001100000200000002000000610ce03f0000000000000000000000006aac19bf9eb8554f875e547de529cec7e86d00000011000000000000020000004bb7ac720000000000000000000000006aac19bf9eb8554f875e547de529cec7b46d00000011000000000000020000006699c6550000000000000000000000006aac19bf9eb8554f875e547de529cec7c76d00000011000001000000020000005525a56c0000000000000000000000006aac19bf9eb8554f875e547de529cec7c26d00000011000000000000y
+    ViewModelState: 7adaee72040000001c000000bc0100000200000009000000ffffffff2212f54802000000180000000100000076fa4866010000002c00000008000000e80d0f8a84afe44fb196e5c6d0c8291cce81000000230000010000000200000031abc352000000000000000000000000e80d0f8a84afe44fb196e5c6d0c8291c6f6d0000001b00000000000002000000b5b6be21000000000000000000000000e80d0f8a84afe44fb196e5c6d0c8291c7f6d0000001b00000000000002000000687afd35000000000000000000000000e80d0f8a84afe44fb196e5c6d0c8291c736d0000001b0000000000000200000026a62226000000000000000000000000e80d0f8a84afe44fb196e5c6d0c8291c7c6d0000001b000002000000020000000d90d52d000000000000000000000000e80d0f8a84afe44fb196e5c6d0c8291c756d0000001b00000000000002000000cc38e712000000000000000000000000e80d0f8a84afe44fb196e5c6d0c8291c816d0000001b0000000000000200000046d34867604647060000000000000000e80d0f8a84afe44fb196e5c6d0c8291cfb810000001f00000000000002000000f7df3ff94dd8b42e0000000000000000e80d0f8a84afe44fb196e5c6d0c8291cf8810000000d000000000000y
     SearchText: 
     Columns:
     - ColumnId: Visibility
@@ -1187,7 +1187,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/2D/Palettes
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/2D/Palettes
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Victo\OneDrive\Dokument\GitHub\Grp7Prj1\Grp7Prj1
   m_LockTracker:
@@ -1207,9 +1207,9 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_rawData: 1099511657112
+    - m_rawData: 1099511657109
     m_LastClickedID:
-      m_rawData: 1099511657112
+      m_rawData: 1099511657109
     m_ExpandedIDs:
     - m_rawData: 0
     - m_rawData: 1099511656678
@@ -1306,9 +1306,9 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_rawData: 18691697700326
+    - m_rawData: 29686813977980
     m_LastClickedEntityId:
-      m_rawData: 18691697700326
+      m_rawData: 29686813977980
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs:
     - m_rawData: 568105584918843154
@@ -1462,7 +1462,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 3777
+  controlID: 4656
   draggingID: 0
 --- !u!114 &15
 MonoBehaviour:
