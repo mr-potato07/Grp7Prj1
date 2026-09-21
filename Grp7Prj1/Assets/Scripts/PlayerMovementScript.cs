@@ -8,6 +8,7 @@ public class PlayerMovementScript : MonoBehaviour
 {
     [SerializeField] private InputActionReference move;
     [SerializeField] private InputActionReference jump;
+    [SerializeField] private InputActionReference dash;
 
     [SerializeField] private LayerMask whatIsGround;
 
@@ -18,6 +19,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float jumpForce = 1f;
+    [SerializeField] private float dashForce = 1f;
     [SerializeField] private AudioClip[] jumpSFXs;
 
     [SerializeField] private ParticleSystem jumpParticleSys;
@@ -42,12 +44,14 @@ public class PlayerMovementScript : MonoBehaviour
         anim = GetComponent<Animator>();
         audiosrc = GetComponent<AudioSource>();
         jump.action.started += Jump;
+        dash.action.started += Dash;
 
     }
 
     private void OnDisable()
     {
         jump.action.started -= Jump;
+        dash.action.started -= Dash;
     }
 
 
@@ -101,30 +105,20 @@ public class PlayerMovementScript : MonoBehaviour
             audiosrc.PlayOneShot(jumpSFXs[randomjumpSFX]);
         }
 
-        /*if (*/
+       
         CheckIsWall(); /*== true)*/
-        /*{
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
-
-
-            if (moveDirection < 0)
-            {
-                canMove = false;
-                rb.AddForce(new Vector2(1000, jumpForce));
-                Invoke("CanMoveAgain", 0.25f);
-            }
-            if (moveDirection > 0)
-            {
-                rb.AddForce(new Vector2(-1000, jumpForce));
-                canMove = false;
-                Invoke("CanMoveAgain", 0.25f);
-            }
-
-
-        }
         
-        */
 
+    }
+
+
+    private void Dash(InputAction.CallbackContext context2)
+    {
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveDirection * dashForce, rb.linearVelocity.y);
+        
+        canMove = false;
+        Invoke("CanMoveAgain", 0.25f);
     }
 
     private void CheckIsWall()
@@ -138,7 +132,7 @@ public class PlayerMovementScript : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             canMove = false;
-            rb.AddForce(new Vector2(400, jumpForce));
+            rb.AddForce(new Vector2(400, jumpForce ));
             Invoke("CanMoveAgain", 0.25f);
 
         }
@@ -148,33 +142,20 @@ public class PlayerMovementScript : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             canMove = false;
-            rb.AddForce(new Vector2(-400, jumpForce));
+            rb.AddForce(new Vector2(-400, jumpForce ));
             Invoke("CanMoveAgain", 0.25f);
 
         }
 
 
-    }
-   /* private bool CheckIsWall()
-    {
-        RaycastHit2D lefthandhit = Physics2D.Raycast(lefthand.position, Vector2.left, raycastDistance, whatIsGround);
-        RaycastHit2D righthandhit = Physics2D.Raycast(righthand.position, Vector2.right, raycastDistance, whatIsGround);
-
-        Debug.DrawRay(lefthand.position, Vector2.left * raycastDistance, Color.red, 0.25f);
-        Debug.DrawRay(righthand.position, Vector2.right * raycastDistance, Color.red, 0.25f);
-
-        if (lefthandhit.collider != null && lefthandhit || righthandhit.collider != null && righthandhit)
+        if (righthandhit.collider != null && righthandhit && lefthandhit.collider != null && lefthandhit)
         {
-            return true;
-           
-        }
-        else
-        {
-            return false;
+            rb.AddForce(new Vector2(0, -jumpForce));
         }
 
+
     }
-   */
+   
     private bool CheckIsGrounded()
     {
         RaycastHit2D lefthit = Physics2D.Raycast(leftfoot.position, Vector2.down, raycastDistance, whatIsGround);

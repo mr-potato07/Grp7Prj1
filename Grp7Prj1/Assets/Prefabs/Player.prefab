@@ -93,7 +93,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -36, y: -13.75, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6715826764813424631}
@@ -279,6 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementScript
   move: {fileID: 4341684300649243945, guid: 38d6ef159ac2faf418f396d0ae3867dc, type: 3}
   jump: {fileID: 1715948073083723446, guid: 38d6ef159ac2faf418f396d0ae3867dc, type: 3}
+  dash: {fileID: -8230099424309312959, guid: 38d6ef159ac2faf418f396d0ae3867dc, type: 3}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -289,6 +290,7 @@ MonoBehaviour:
   raycastDistance: 0.1
   moveSpeed: 8
   jumpForce: 600
+  dashForce: 20
   jumpSFXs: []
   jumpParticleSys: {fileID: 0}
 --- !u!1 &6949004730678035326
