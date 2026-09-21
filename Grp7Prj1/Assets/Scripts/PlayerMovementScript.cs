@@ -1,6 +1,8 @@
 using System;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     [SerializeField] private LayerMask whatIsGround;
 
-    [SerializeField] private Transform leftfoot, rightfoot;
+    [SerializeField] private Transform leftfoot, rightfoot, lefthand, righthand;
 
     [SerializeField] private float raycastDistance = 0.1f;
 
@@ -87,26 +89,104 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-
+      
         if (CheckIsGrounded() == true)
         {
 
             rb.AddForce(new Vector2(0, jumpForce));
+         
+            
             jumpParticleSys.Play();
             int randomjumpSFX = UnityEngine.Random.Range(0, jumpSFXs.Length);
             audiosrc.PlayOneShot(jumpSFXs[randomjumpSFX]);
         }
 
+        /*if (*/
+        CheckIsWall(); /*== true)*/
+        /*{
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+
+
+            if (moveDirection < 0)
+            {
+                canMove = false;
+                rb.AddForce(new Vector2(1000, jumpForce));
+                Invoke("CanMoveAgain", 0.25f);
+            }
+            if (moveDirection > 0)
+            {
+                rb.AddForce(new Vector2(-1000, jumpForce));
+                canMove = false;
+                Invoke("CanMoveAgain", 0.25f);
+            }
+
+
+        }
+        
+        */
 
     }
 
+    private void CheckIsWall()
+    {
+        RaycastHit2D lefthandhit = Physics2D.Raycast(lefthand.position, Vector2.left, raycastDistance, whatIsGround);
+        RaycastHit2D righthandhit = Physics2D.Raycast(righthand.position, Vector2.right, raycastDistance, whatIsGround);
+
+        
+
+        if (lefthandhit.collider != null && lefthandhit)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+            canMove = false;
+            rb.AddForce(new Vector2(400, jumpForce));
+            Invoke("CanMoveAgain", 0.25f);
+
+        }
+
+
+        if (righthandhit.collider != null && righthandhit)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+            canMove = false;
+            rb.AddForce(new Vector2(-400, jumpForce));
+            Invoke("CanMoveAgain", 0.25f);
+
+        }
+
+
+    }
+   /* private bool CheckIsWall()
+    {
+        RaycastHit2D lefthandhit = Physics2D.Raycast(lefthand.position, Vector2.left, raycastDistance, whatIsGround);
+        RaycastHit2D righthandhit = Physics2D.Raycast(righthand.position, Vector2.right, raycastDistance, whatIsGround);
+
+        Debug.DrawRay(lefthand.position, Vector2.left * raycastDistance, Color.red, 0.25f);
+        Debug.DrawRay(righthand.position, Vector2.right * raycastDistance, Color.red, 0.25f);
+
+        if (lefthandhit.collider != null && lefthandhit || righthandhit.collider != null && righthandhit)
+        {
+            return true;
+           
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+   */
     private bool CheckIsGrounded()
     {
         RaycastHit2D lefthit = Physics2D.Raycast(leftfoot.position, Vector2.down, raycastDistance, whatIsGround);
         RaycastHit2D righthit = Physics2D.Raycast(rightfoot.position, Vector2.down, raycastDistance, whatIsGround);
+       
+
+
         Debug.DrawRay(leftfoot.position, Vector2.down * raycastDistance, Color.red, 0.25f);
-        Debug.DrawRay(rightfoot.position, Vector2.down * raycastDistance, Color.red, 0.25f);
-        if (lefthit.collider != null && lefthit || righthit.collider != null && righthit)
+        
+        Debug.DrawRay(leftfoot.position, Vector2.down * raycastDistance, Color.red, 0.25f);
+       
+        if (lefthit.collider != null && lefthit || righthit.collider != null && righthit )
         {
             return true;
         }
