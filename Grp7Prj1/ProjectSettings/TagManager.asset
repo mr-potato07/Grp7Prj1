@@ -41,6 +41,36 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background 1
+    uniqueID: 3679506031
+    locked: 0
+  - name: Fog_back
+    uniqueID: 1639754725
+    locked: 0
+  - name: Background 2
+    uniqueID: 2038345271
+    locked: 0
+  - name: Fog_back_2
+    uniqueID: 1983716895
+    locked: 0
+  - name: Ground
+    uniqueID: 2684582117
+    locked: 0
+  - name: Fog_front
+    uniqueID: 1596403583
+    locked: 0
+  - name: Foreground
+    uniqueID: 1312040215
+    locked: 0
+  - name: 
+    uniqueID: 4072541513
+    locked: 0
+  - name: 
+    uniqueID: 3185906115
+    locked: 0
+  - name: 
+    uniqueID: 4179219075
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []

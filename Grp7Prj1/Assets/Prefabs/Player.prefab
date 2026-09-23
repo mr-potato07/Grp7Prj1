@@ -76,9 +76,10 @@ GameObject:
   - component: {fileID: 5296984778088743995}
   - component: {fileID: 4097738277849299638}
   - component: {fileID: 2105625265563132101}
+  - component: {fileID: 9038307796174873882}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +233,7 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &4097738277849299638
@@ -280,6 +281,7 @@ MonoBehaviour:
   move: {fileID: 4341684300649243945, guid: 38d6ef159ac2faf418f396d0ae3867dc, type: 3}
   jump: {fileID: 1715948073083723446, guid: 38d6ef159ac2faf418f396d0ae3867dc, type: 3}
   dash: {fileID: -8230099424309312959, guid: 38d6ef159ac2faf418f396d0ae3867dc, type: 3}
+  vertical: {fileID: 4334645641051098855, guid: 38d6ef159ac2faf418f396d0ae3867dc, type: 3}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -291,8 +293,28 @@ MonoBehaviour:
   moveSpeed: 8
   jumpForce: 600
   dashForce: 20
+  verticalSpeed: 100
   jumpSFXs: []
   jumpParticleSys: {fileID: 0}
+  canMove: 1
+  canDash: 0
+--- !u!114 &9038307796174873882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5549479083477761325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd2eb32e0ae0154bb7d6a13c632928f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealthScript
+  startinghealth: 5
+  spawnposition: {fileID: 0}
+  healthbar: {fileID: 0}
+  healthfill: {fileID: 0}
+  takeDamageSFX: {fileID: 0}
 --- !u!1 &6949004730678035326
 GameObject:
   m_ObjectHideFlags: 0
