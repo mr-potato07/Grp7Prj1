@@ -109,13 +109,10 @@ public class PlayerMovementScript : MonoBehaviour
 
 
         isGrounded = CheckIsGrounded();
-        if (isGrounded == false)
-        {
-            canDash = false;
-        } else  if (isGrounded == true)
+          if (isGrounded == true)
         {
             canDash = true;
-        }
+        } 
     }
 
 
@@ -129,7 +126,7 @@ public class PlayerMovementScript : MonoBehaviour
       
         if (CheckIsGrounded() == true)
         {
-
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             rb.AddForce(new Vector2(0, jumpForce));
          
             
@@ -145,21 +142,33 @@ public class PlayerMovementScript : MonoBehaviour
     }
     public void Dash(InputAction.CallbackContext context)
     {
+
+     
+
         if (canDash == false) return;
 
 
+       
         canDash = false;
         canMove = false;
         
 
         Invoke("CanMoveAgain", 0.25f);
-        Invoke("CanDashAgain", 0.75f);
+        
+        if (isGrounded == false)
+        {
+            canDash = false;
+        } else if (isGrounded == true)
+        {
+            Invoke("CanDashAgain", 0.75f);
+        }
 
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         rb.linearVelocity = new Vector2(moveDirection * dashForce, rb.linearVelocity.y);
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, verticalDirection * dashForce / 1.2f);
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, verticalDirection * dashForce / 1.4f);
 
+        
 
 
     }
