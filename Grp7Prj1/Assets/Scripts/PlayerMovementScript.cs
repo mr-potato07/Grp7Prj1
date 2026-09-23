@@ -1,4 +1,6 @@
 using System;
+using System.Reflection.PortableExecutable;
+using System.Runtime.CompilerServices;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +12,8 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private InputActionReference jump;
     [SerializeField] private InputActionReference dash;
 
+    [SerializeField] private InputActionReference vertical;
+
     [SerializeField] private LayerMask whatIsGround;
 
     [SerializeField] private Transform leftfoot, rightfoot, lefthand, righthand;
@@ -20,14 +24,25 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float jumpForce = 1f;
     [SerializeField] private float dashForce = 1f;
-    [SerializeField] private AudioClip[] jumpSFXs;
+
+    
+   [SerializeField] private AudioClip[] jumpSFXs;
 
     [SerializeField] private ParticleSystem jumpParticleSys;
 
 
 
-    bool canMove = true;
+    public bool canMove = true;
+
+    public bool canDash;
+
+    private bool isGrounded;
+
+
+
     private float moveDirection;
+
+    private float verticalDirection;
 
     private AudioSource audiosrc;
     private Rigidbody2D rb;
@@ -45,6 +60,10 @@ public class PlayerMovementScript : MonoBehaviour
         audiosrc = GetComponent<AudioSource>();
         jump.action.started += Jump;
         dash.action.started += Dash;
+        canDash = true;
+       
+
+
 
     }
 
@@ -61,12 +80,13 @@ public class PlayerMovementScript : MonoBehaviour
     {
         moveDirection = move.action.ReadValue<float>();
 
+        verticalDirection = vertical.action.ReadValue<float>();
+
         anim.SetFloat("MoveSpeed", MathF.Abs(rb.linearVelocity.x));
         anim.SetFloat("VerticalSpeed", rb.linearVelocity.y);
         anim.SetBool("IsGrounded", CheckIsGrounded());
 
-
-
+        
 
         if (moveDirection < 0f)
         {
@@ -76,7 +96,8 @@ public class PlayerMovementScript : MonoBehaviour
         {
             FlipSprite(false);
         }
-
+       
+        
     }
 
     private void FixedUpdate()
@@ -110,15 +131,46 @@ public class PlayerMovementScript : MonoBehaviour
         
 
     }
-
-
-    private void Dash(InputAction.CallbackContext context2)
+    public void Dash(InputAction.CallbackContext context2)
     {
+        if (canDash == false) return;
+
+        bool isgrounded = CheckIsGrounded();
+        if (isgrounded == true)
+        {
+            canDash = true;
+        }
+        else if (isgrounded == false) canDash = false;
+
+
+        canDash = false;
+        canMove = false;
+        isGrounded = CheckIsGrounded();
+        Invoke("CanDashAgain", 0.25f);
+        Invoke("CanMoveAgain", 0.25f);
+
+
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         rb.linearVelocity = new Vector2(moveDirection * dashForce, rb.linearVelocity.y);
-        
-        canMove = false;
-        Invoke("CanMoveAgain", 0.25f);
+
+        if (isgrounded == true)
+        {
+            canDash = true;
+        }
+        else if (isgrounded == false) canDash = false;
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     private void CheckIsWall()
@@ -156,7 +208,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     }
    
-    private bool CheckIsGrounded()
+    public bool CheckIsGrounded()
     {
         RaycastHit2D lefthit = Physics2D.Raycast(leftfoot.position, Vector2.down, raycastDistance, whatIsGround);
         RaycastHit2D righthit = Physics2D.Raycast(rightfoot.position, Vector2.down, raycastDistance, whatIsGround);
@@ -190,4 +242,13 @@ public class PlayerMovementScript : MonoBehaviour
     {
         canMove = true;
     }
+
+    private void CanDashAgain()
+    {
+        canDash = true;
+    }
+
+   
+
+
 }
