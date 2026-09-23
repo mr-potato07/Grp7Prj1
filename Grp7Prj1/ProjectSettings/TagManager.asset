@@ -41,25 +41,25 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background 1
+  - name: One-way-platforms
     uniqueID: 3679506031
     locked: 0
-  - name: Fog_back
+  - name: Ground
     uniqueID: 1639754725
     locked: 0
-  - name: Background 2
+  - name: 
     uniqueID: 2038345271
     locked: 0
-  - name: Fog_back_2
+  - name: 
     uniqueID: 1983716895
     locked: 0
-  - name: Ground
+  - name: 
     uniqueID: 2684582117
     locked: 0
-  - name: Fog_front
+  - name: 
     uniqueID: 1596403583
     locked: 0
-  - name: Foreground
+  - name: 
     uniqueID: 1312040215
     locked: 0
   - name: 
