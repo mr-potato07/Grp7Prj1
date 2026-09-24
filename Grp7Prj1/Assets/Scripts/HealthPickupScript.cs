@@ -19,10 +19,10 @@ public class HealthPickupScript : MonoBehaviour
 
             if (hasRestoredHealth)
             {
-                audiosrc.PlayOneShot(healthPickupSFX);
-                Instantiate(BananaParticlesys, transform.position, Quaternion.identity);
+                
+               /* Instantiate(BananaParticlesys, transform.position, Quaternion.identity);*/
             
-                Destroy(gameObject, 0.20f);
+                Destroy(gameObject);
                
             }
 
