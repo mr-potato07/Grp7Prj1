@@ -8304,6 +8304,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4308392845756003204, guid: dda48b0b4b98ce745bc0ea74d689d4a6, type: 3}
   m_PrefabInstance: {fileID: 34852362}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> parent of aab0360 (Merge)
+=======
 >>>>>>> parent of aab0360 (Merge)
 --- !u!1 &722416387
 GameObject:
