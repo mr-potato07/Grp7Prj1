@@ -126,12 +126,12 @@ public class PlayerMovementScript : MonoBehaviour
       
         if (CheckIsGrounded() == true)
         {
-            int randomjumpSFX = UnityEngine.Random.Range(0, jumpSFXs.Length);
-            audiosrc.PlayOneShot(jumpSFXs[randomjumpSFX]);
+           
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
             rb.AddForce(new Vector2(0, jumpForce));
-         
-            
+
+            int randomjumpSFX = UnityEngine.Random.Range(0, jumpSFXs.Length);
+            audiosrc.PlayOneShot(jumpSFXs[randomjumpSFX]);
             jumpParticleSys.Play();
           
         }
