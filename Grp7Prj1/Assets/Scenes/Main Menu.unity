@@ -494,6 +494,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67633096}
   m_CullTransparentMesh: 1
+--- !u!1 &73784382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2703594524162565480, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
+  m_PrefabInstance: {fileID: 918130890}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &115755623
 GameObject:
   m_ObjectHideFlags: 0
@@ -4634,6 +4639,26 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1291658553979697416, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291658553979697416, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774746130597534680, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774746130597534680, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774746130597534680, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 605.4268
+      objectReference: {fileID: 0}
     - target: {fileID: 2602396096393082305, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -4788,7 +4813,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4187841319025330319, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
       propertyPath: m_text
-      value: Credits...
+      value: 'A game by:
+
+
+        Love, Susan, Victor
+
+
+        Assets from:
+
+
+        Open Game art
+
+        Itch.io
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4187841319025330319, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
       propertyPath: m_fontAsset
@@ -4797,10 +4835,10 @@ PrefabInstance:
     - target: {fileID: 4187841319025330319, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: -178713843945028227, guid: e64092bd9813c39479ded140d33c177c, type: 2}
     - target: {fileID: 4187841319025330319, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5991393526748092748, guid: 0a5206e3bf11a144c9846f3d4f0493a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -9491,7 +9529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuController
   sceneIndex: 0
-  creditsPanel: {fileID: 0}
+  creditsPanel: {fileID: 73784382}
 --- !u!4 &1722370556
 Transform:
   m_ObjectHideFlags: 0
