@@ -9528,7 +9528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e187c2209da4e640992ab7467d4ea84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuController
-  sceneIndex: 0
+  sceneIndex: 1
   creditsPanel: {fileID: 73784382}
 --- !u!4 &1722370556
 Transform:

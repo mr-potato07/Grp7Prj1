@@ -1,7 +1,5 @@
 using System;
-using System.Reflection.PortableExecutable;
-using System.Runtime.CompilerServices;
-using UnityEditor.Tilemaps;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -137,7 +135,7 @@ public class PlayerMovementScript : MonoBehaviour
         }
 
        
-        CheckIsWall(); /*== true)*/
+        CheckIsWall(); 
         
 
     }
