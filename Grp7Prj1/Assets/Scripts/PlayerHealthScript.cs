@@ -63,7 +63,7 @@ public class PlayerHealthScript : MonoBehaviour
         }
         else
         {
-            healthfill.color = Color.limeGreen;
+            healthfill.color = Color.gold;
         }
     }
 
