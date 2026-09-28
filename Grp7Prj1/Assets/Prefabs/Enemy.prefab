@@ -89,7 +89,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7166236263522030466, guid: 8f20a1a26b119484cae1d8e38e259a90, type: 3}
   m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6bc57c4ffbc0a4aafc1eb4b15adefe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovementScript
-  moveSpeed: 2
+  moveSpeed: 2.7
   bounce: 300
   damagegiven: 1
   knockbackForce: 300

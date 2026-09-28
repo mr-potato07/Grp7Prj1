@@ -33,33 +33,37 @@ public class EnemyMovementScript : MonoBehaviour
             rend.flipX = false;
         }
     }
+
     void FixedUpdate()
     {
         transform.Translate(new Vector2(moveSpeed, 0) * Time.deltaTime);
-
     }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("EnemyBlock") || (other.gameObject.CompareTag("Enemy")) || (other.gameObject.CompareTag("Player")))
+        if (other.gameObject.CompareTag("EnemyBlock") ||
+            other.gameObject.CompareTag("Enemy"))
         {
             moveSpeed = -moveSpeed;
         }
 
         if (other.gameObject.CompareTag("Player"))
-            {
-            other.gameObject.GetComponent<PlayerHealthScript>().TakeDamage(damagegiven);
+        {
+            other.gameObject.GetComponent<PlayerHealthScript>()
+                .TakeDamage(damagegiven);
 
-            if(other.transform.position.x > transform.position.x)
+            if (other.transform.position.x > transform.position.x)
             {
-                other.gameObject.GetComponent<PlayerMovementScript>().TakeKnockBack(knockbackForce, upwardsForce);
+                other.gameObject.GetComponent<PlayerMovementScript>()
+                    .TakeKnockBack(knockbackForce, upwardsForce);
             }
             else
             {
-                other.gameObject.GetComponent<PlayerMovementScript>().TakeKnockBack(-knockbackForce, upwardsForce);
+                other.gameObject.GetComponent<PlayerMovementScript>()
+                    .TakeKnockBack(-knockbackForce, upwardsForce);
             }
         }
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
 
