@@ -2,17 +2,19 @@ using UnityEngine;
 
 public class TutorialTriggerScript : MonoBehaviour
 {
+    [SerializeField] private GameObject tutorialImage;
+
     private void Start()
     {
-      
-        gameObject.SetActive(false);
+
+        tutorialImage.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            gameObject.SetActive(true);
+            tutorialImage.SetActive(true);
         }
     }
 
@@ -20,7 +22,7 @@ public class TutorialTriggerScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+            tutorialImage.SetActive(false);
         }
     }
 }
