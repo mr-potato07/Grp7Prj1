@@ -16,8 +16,8 @@ public class LevelFinishScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
           
-                panel.SetActive(true);
-                finishtext.SetActive(true);
+              /*  panel.SetActive(true);*/
+              /*  finishtext.SetActive(true);*/
                 anim.enabled = true;
                 Invoke(nameof(LoadNextLevel), 3f);
             
@@ -31,8 +31,8 @@ public class LevelFinishScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            panel.SetActive(false);
-            finishtext.SetActive(false);
+          /*  panel.SetActive(false);*/
+            /*finishtext.SetActive(false);*/
 
         }
     }
