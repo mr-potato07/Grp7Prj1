@@ -1,8 +1,7 @@
-using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuControllerScript : MonoBehaviour
+public class MenuController : MonoBehaviour
 {
     [SerializeField] private int sceneIndex;
     [SerializeField] private GameObject creditsPanel;
@@ -14,7 +13,6 @@ public class MenuControllerScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-       
     }
 
     public void ShowCredits()
@@ -22,8 +20,9 @@ public class MenuControllerScript : MonoBehaviour
         creditsPanel.SetActive(true);
     }
 
-   public void HideCredits()
+    public void HideCredits()
     {
         creditsPanel.SetActive(false);
     }
 }
+
